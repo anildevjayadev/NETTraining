@@ -15,9 +15,9 @@ namespace NETTraining.Controllers
         string message;
 
         List<ProjectModels> Projects = new List<ProjectModels> {
-            new ProjectModels{ProjectId=1,ProjectName="Student Project", ProjectUseCase ="Project for Student management"},
-            new ProjectModels{ProjectId=2,ProjectName="Employee Project", ProjectUseCase ="Project for Employee Management"},
-            new ProjectModels{ProjectId=3,ProjectName="Employer Project", ProjectUseCase ="Project for Employer Management"},
+            new ProjectModels{ProjectId=1,ProjectName="Student Project", ProjectDetail ="Project for Student management",ProjectCreatedOn=DateTime.Now},
+            new ProjectModels{ProjectId=2,ProjectName="Employee Project", ProjectDetail ="Project for Employee Management",ProjectCreatedOn=DateTime.Now},
+            new ProjectModels{ProjectId=3,ProjectName="Employer Project", ProjectDetail ="Project for Employer Management",ProjectCreatedOn=DateTime.Now},
         };
 
         [HttpGet]
@@ -48,7 +48,7 @@ namespace NETTraining.Controllers
                 return NotFound();
             }
             ProjecttobeUpdated.ProjectName = project.ProjectName;
-            ProjecttobeUpdated.ProjectUseCase = project.ProjectUseCase;
+            ProjecttobeUpdated.ProjectDetail = project.ProjectDetail;
 
             return Ok();
         }

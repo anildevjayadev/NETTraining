@@ -8,14 +8,16 @@ using Microsoft.AspNetCore.Http;
 
 namespace NETTraining.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class TaskController : ControllerBase
     {
         string message;
 
         List<TasksModels> Tasks = new List<TasksModels> {
-            new TasksModels{TaskID=1,Status=200,UserName ="Mark"},
-            new TasksModels{TaskID=2,Status=300,UserName="June"},
-            new TasksModels{TaskID=3,Status=409,UserName="Scott"},
+            new TasksModels{TaskID=1,ProjectId=1,Status=2,TaskassignedtoUserId =1,Details="This is a test task",CreatedOn=DateTime.Now },
+            new TasksModels{TaskID=2,ProjectId=1,Status=3,TaskassignedtoUserId=2,Details="This is a test task",CreatedOn=DateTime.Now},
+            new TasksModels{TaskID=3,ProjectId=2,Status=4,TaskassignedtoUserId=2,Details="this is a test task",CreatedOn=DateTime.Now},
         };
 
         [HttpGet]
@@ -26,9 +28,9 @@ namespace NETTraining.Controllers
 
         [Route("{taskId}")]
         [HttpGet]
-        public ActionResult<TasksModels> GetProjectById(int taskId)
+        public ActionResult<TasksModels> GetTaskById(int taskId)
         {
-            var taskSearchedbyId = Tasks.FirstOrDefault(p => p.TaskID == taskId);
+            var taskSearchedbyId = Tasks.FirstOrDefault(t => t.TaskID == taskId);
             if (taskSearchedbyId == null)
             {
                 return NoContent();
@@ -45,29 +47,31 @@ namespace NETTraining.Controllers
             {
                 return NotFound();
             }
+            TasktobeUpdated.ProjectId = task.ProjectId;
+            TasktobeUpdated.TaskassignedtoUserId = task.TaskassignedtoUserId;
             TasktobeUpdated.Status = task.Status;
-            TasktobeUpdated.UserName = task.UserName;
+            TasktobeUpdated.Details = task.Details;
 
             return Ok();
         }
 
         [HttpPost]
-        public ActionResult<TasksModels> CreateNewTasks(TasksModels project)
+        public ActionResult<TasksModels> CreateNewTasks(TasksModels newtask)
         {
-            if (project.TaskID == 0 || project.UserName == null)
+            if (newtask.TaskID == 0 || newtask.ProjectId == 0 || newtask.TaskassignedtoUserId ==0)
             {
                 return StatusCode(400, "Invalid Task details provided");
             }
-            var taskalreadyExists = Tasks.First(p => p.TaskID == project.TaskID);
+            var taskalreadyExists = Tasks.FirstOrDefault(t => t.TaskID == newtask.TaskID);
 
             if (taskalreadyExists != null)
             {
-                message = "Task already exists(existing Task User Name:{0})";
-                string data = taskalreadyExists.UserName;
+                message = "Task already exists(existing task assigned to userid:{0})";
+                int data = taskalreadyExists.TaskassignedtoUserId;
                 message = string.Format(message, data);
                 return StatusCode(409, message);
             }
-            Tasks.Add(project);
+            Tasks.Add(newtask);
             return Ok();
         }
     }

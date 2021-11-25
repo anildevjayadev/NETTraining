@@ -9,8 +9,11 @@ namespace NETTraining.Models
     {
 
         public int TaskID { get; set; }
+        public int ProjectId { get; set; }
+        public int TaskassignedtoUserId { get; set; }
+        public string Details { get; set; }
         public int Status { get; set; }
-        public string UserName { get; set; }
-   
+        public DateTime CreatedOn { get; set; }
+
     }
 }

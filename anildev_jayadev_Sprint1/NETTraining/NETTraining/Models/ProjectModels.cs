@@ -9,7 +9,8 @@ namespace NETTraining.Models
     {
         public int ProjectId { get; set; }
         public string ProjectName { get; set; }
-        public string ProjectUseCase { get; set; }
-       
+        public string ProjectDetail { get; set; }
+        public DateTime ProjectCreatedOn { get; set; }
+
     }
 }
