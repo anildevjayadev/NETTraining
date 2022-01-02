@@ -1,0 +1,16 @@
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.exe
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.deps.json
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.runtimeconfig.json
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.runtimeconfig.dev.json
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.dll
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\ref\Repository.dll
+C:\Users\91984\source\repos\WebApplication12\Models\bin\Debug\net5.0\Repository.pdb
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.csproj.AssemblyReference.cache
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.AssemblyInfoInputs.cache
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.AssemblyInfo.cs
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.dll
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\ref\Repository.dll
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.pdb
+C:\Users\91984\source\repos\WebApplication12\Models\obj\Debug\net5.0\Repository.genruntimeconfig.cache
